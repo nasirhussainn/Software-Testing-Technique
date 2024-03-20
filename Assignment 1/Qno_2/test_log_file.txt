@@ -1,0 +1,28 @@
+Test Case 1:
+Verdict 1: Pass
+
+Test Case 2:
+Verdict 2: Fail
+
+1 0
+0 0 1
+Observed Matrix:
+S
+i
+n
+g
+u
+l
+a
+r
+ 
+M
+a
+t
+r
+i
+x
+Expected Matrix:
+2 2 2
+2 2 2
+2 2 2
