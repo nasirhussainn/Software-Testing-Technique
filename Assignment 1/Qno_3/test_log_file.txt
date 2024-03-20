@@ -1,0 +1,192 @@
+Test Case 1:
+Query: ['INSERT', 'Blood Diamond', 'War', '12.99', 'False']
+Expected Output: Record inserted.
+Observed Output: Record inserted.
+Verdict: Pass
+
+Test Case 2:
+Query: ['INSERT', 'Better Days', 'Romantic', '34.49', 'False']
+Expected Output: Record inserted.
+Observed Output: Record inserted.
+Verdict: Pass
+
+Test Case 3:
+Query: ['INSERT', 'The Pursuit of Happyness', 'Drama', '2.79', 'False']
+Expected Output: Record inserted.
+Observed Output: Record inserted.
+Verdict: Pass
+
+Test Case 4:
+Query: ['INSERT', 'The Shawshank Redemption', 'Drama', 'XZZ', 'False']
+Expected Output: Insertion failed.
+Observed Output: Insertion failed.
+Verdict: Pass
+
+Test Case 5:
+Query: ['SEARCH', 'Blood Diamond']
+Expected Output: ('Blood Diamond'
+Observed Output: (219, 'Blood Diamond', 'War', 12.99, 'False')
+Verdict: Pass
+
+Test Case 6:
+Query: ['SEARCH', 'Better Days']
+Expected Output: ('Better Days'
+Observed Output: (220, 'Better Days', 'Romantic', 34.49, 'False')
+Verdict: Pass
+
+Test Case 7:
+Query: ['SEARCH', 'The Pursuit of Happyness']
+Expected Output: ('The Pursuit of Happyness'
+Observed Output: (221, 'The Pursuit of Happyness', 'Drama', 2.79, 'False')
+Verdict: Pass
+
+Test Case 8:
+Query: ['SEARCH', ' Nasir']
+Expected Output: Not found.
+Observed Output: Not found.
+Verdict: Pass
+
+Test Case 1:
+Query: ['INSERT', 'Blood Diamond', 'War', '12.99', 'False']
+Expected Output: Record inserted.
+Observed Output: Record inserted.
+Verdict: Pass
+
+Test Case 2:
+Query: ['INSERT', 'Better Days', 'Romantic', '34.49', 'False']
+Expected Output: Record inserted.
+Observed Output: Record inserted.
+Verdict: Pass
+
+Test Case 3:
+Query: ['INSERT', 'The Pursuit of Happyness', 'Drama', '2.79', 'False']
+Expected Output: Record inserted.
+Observed Output: Record inserted.
+Verdict: Pass
+
+Test Case 4:
+Query: ['INSERT', 'The Shawshank Redemption', 'Drama', 'XZZ', 'False']
+Expected Output: Insertion failed.
+Observed Output: Insertion failed.
+Verdict: Pass
+
+Test Case 5:
+Query: ['SEARCH', 'Blood Diamond']
+Expected Output: ('Blood Diamond'
+Observed Output: (219, 'Blood Diamond', 'War', 12.99, 'False')
+Verdict: Pass
+
+Test Case 6:
+Query: ['SEARCH', 'Better Days']
+Expected Output: ('Better Days'
+Observed Output: (220, 'Better Days', 'Romantic', 34.49, 'False')
+Verdict: Pass
+
+Test Case 7:
+Query: ['SEARCH', 'The Pursuit of Happyness']
+Expected Output: ('The Pursuit of Happyness'
+Observed Output: (221, 'The Pursuit of Happyness', 'Drama', 2.79, 'False')
+Verdict: Pass
+
+Test Case 8:
+Query: ['SEARCH', ' Nasir']
+Expected Output: Not found.
+Observed Output: Not found.
+Verdict: Pass
+
+Test Case 1:
+Query: ['INSERT', 'Blood', 'War', '12.99', 'False']
+Expected Output: Record inserted.
+Observed Output: Record inserted.
+Verdict: Pass
+
+Test Case 2:
+Query: ['INSERT', 'Better Days', 'Romantic', '34.49', 'False']
+Expected Output: Record inserted.
+Observed Output: Record inserted.
+Verdict: Pass
+
+Test Case 3:
+Query: ['INSERT', 'The Pursuit of Happyness', 'Drama', '2.79', 'False']
+Expected Output: Record inserted.
+Observed Output: Record inserted.
+Verdict: Pass
+
+Test Case 4:
+Query: ['INSERT', 'The Shawshank Redemption', 'Drama', 'XZZ', 'False']
+Expected Output: Insertion failed.
+Observed Output: Insertion failed.
+Verdict: Pass
+
+Test Case 5:
+Query: ['SEARCH', 'Blood Diamond']
+Expected Output: ('Blood Diamond'
+Observed Output: (219, 'Blood Diamond', 'War', 12.99, 'False')
+Verdict: Pass
+
+Test Case 6:
+Query: ['SEARCH', 'Better Days']
+Expected Output: ('Better Days'
+Observed Output: (220, 'Better Days', 'Romantic', 34.49, 'False')
+Verdict: Pass
+
+Test Case 7:
+Query: ['SEARCH', 'The Pursuit of Happyness']
+Expected Output: ('The Pursuit of Happyness'
+Observed Output: (221, 'The Pursuit of Happyness', 'Drama', 2.79, 'False')
+Verdict: Pass
+
+Test Case 8:
+Query: ['SEARCH', ' Nasir']
+Expected Output: Not found.
+Observed Output: Not found.
+Verdict: Pass
+
+Test Case 1:
+Query: ['INSERT', 'Blood', 'War', '12.99', 'False']
+Expected Output: Record inserted.
+Observed Output: Record inserted.
+Verdict: Pass
+
+Test Case 2:
+Query: ['INSERT', 'Better Days', 'Romantic', '34.49', 'False']
+Expected Output: Record inserted.
+Observed Output: Record inserted.
+Verdict: Pass
+
+Test Case 3:
+Query: ['INSERT', 'The Pursuit of Happyness', 'Drama', '2.79', 'False']
+Expected Output: Record inserted.
+Observed Output: Record inserted.
+Verdict: Pass
+
+Test Case 4:
+Query: ['INSERT', 'The Shawshank Redemption', 'Drama', 'XZZ', 'False']
+Expected Output: Insertion failed.
+Observed Output: Insertion failed.
+Verdict: Pass
+
+Test Case 5:
+Query: ['SEARCH', 'Blood Diamond']
+Expected Output: ('Blood Diamond'
+Observed Output: (219, 'Blood Diamond', 'War', 12.99, 'False')
+Verdict: Pass
+
+Test Case 6:
+Query: ['SEARCH', 'Better Days']
+Expected Output: ('Hollywood'
+Observed Output: (220, 'Better Days', 'Romantic', 34.49, 'False')
+Verdict: Fail
+
+Test Case 7:
+Query: ['SEARCH', 'The Pursuit of Happyness']
+Expected Output: ('The Pursuit of Happyness'
+Observed Output: (221, 'The Pursuit of Happyness', 'Drama', 2.79, 'False')
+Verdict: Pass
+
+Test Case 8:
+Query: ['SEARCH', ' Nasir']
+Expected Output: Not found.
+Observed Output: Not found.
+Verdict: Pass
+

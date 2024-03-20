@@ -1,0 +1,8 @@
+INSERT,Blood,War,12.99,False
+INSERT,Better Days,Romantic,34.49,False
+INSERT,The Pursuit of Happyness,Drama,2.79,False
+INSERT,The Shawshank Redemption,Drama,XZZ,False
+SEARCH,Blood Diamond
+SEARCH,Better Days
+SEARCH,The Pursuit of Happyness
+SEARCH, Nasir

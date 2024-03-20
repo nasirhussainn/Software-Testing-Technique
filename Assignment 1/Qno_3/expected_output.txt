@@ -1,0 +1,8 @@
+Record inserted.
+Record inserted.
+Record inserted.
+Insertion failed.
+('Blood Diamond', 'War', Decimal('12.99'), False)
+('Hollywood', 'Romantic', Decimal('34.49'), False)
+('The Pursuit of Happyness', 'Drama', Decimal('44.79'), False)
+Not found.
