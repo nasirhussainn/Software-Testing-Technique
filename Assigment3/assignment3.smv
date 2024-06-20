@@ -1,0 +1,182 @@
+MODULE main
+
+IVAR
+input: {c1, c2, c3};
+
+VAR
+door : {open,closed};
+floor : {1,2,3};
+motion : {stationary, moving};
+state : {a,b,c,d,e,f};
+
+ASSIGN
+init(floor) := 1;
+init(door) := open;
+init(motion) := stationary;
+init(state) := a;
+
+
+
+next(state):=case
+	state = a & input = c1 : a;
+	state = a & input = c2 : b;
+	state = a & input = c3 : b;
+	state = b & input = c1 : a;
+	state = b & input = c2 : c;
+	state = b & input = c3 : c;
+	state = c & input = c1 : b;
+	state = c & input = c2 : d;
+	state = c & input = c3 : e;
+	state = d & input = c1 : c;
+	state = d & input = c2 : d;
+	state = d & input = c3 : c;
+	state = e & input = c1 : c;
+	state = e & input = c2 : c;
+	state = e & input = c3 : f;
+	state = f & input = c1 : e;
+	state = f & input = c2 : e;
+	state = f & input = c3 : f;
+	--TRUE : state;
+	esac;
+
+next(floor):=case
+	state = a & input = c1 : 1;
+	state = a & input = c2 : 1;
+	state = a & input = c3 : 1;
+	state = b & input = c1 : 1;
+	state = b & input = c2 : 2;
+	state = b & input = c3 : 2;
+	state = c & input = c1 : 1;
+	state = c & input = c2 : 2;
+	state = c & input = c3 : 3;
+	state = d & input = c1 : 2;
+	state = d & input = c2 : 2;
+	state = d & input = c3 : 2;
+	state = e & input = c1 : 2;
+	state = e & input = c2 : 2;
+	state = e & input = c3 : 3;
+	state = f & input = c1 : 3;
+	state = f & input = c2 : 3;
+	state = f & input = c3 : 3;
+	--TRUE : state;
+	esac;
+
+next(door):=case
+	state = a & input = c1 : open;
+	state = a & input = c2 : closed;
+	state = a & input = c3 : closed;
+	state = b & input = c1 : open;
+	state = b & input = c2 : closed;
+	state = b & input = c3 : closed;
+	state = c & input = c1 : closed;
+	state = c & input = c2 : open;
+	state = c & input = c3 : closed;
+	state = d & input = c1 : closed;
+	state = d & input = c2 : open;
+	state = d & input = c3 : closed;
+	state = e & input = c1 : closed;
+	state = e & input = c2 : closed;
+	state = e & input = c3 : open;
+	state = f & input = c1 : closed;
+	state = f & input = c2 : closed;
+	state = f & input = c3 : open;
+	--TRUE : state;
+	esac;
+
+next(motion):=case
+	state = a & input = c1 : stationary;
+	state = a & input = c2 : moving;
+	state = a & input = c3 : moving;
+	state = b & input = c1 : stationary;
+	state = b & input = c2 : moving;
+	state = b & input = c3 : moving;
+	state = c & input = c1 : moving;
+	state = c & input = c2 : stationary;
+	state = c & input = c3 : moving;
+	state = d & input = c1 : moving;
+	state = d & input = c2 : stationary;
+	state = d & input = c3 : moving;
+	state = e & input = c1 : moving;
+	state = e & input = c2 : moving;
+	state = e & input = c3 : stationary;
+	state = f & input = c1 : moving;
+	state = f & input = c2 : moving;
+	state = f & input = c3 : stationary;
+	--TRUE : state;
+	esac;
+
+
+--LTLSPEC
+-- elevator is not on a floor its door is closed
+--G((motion = moving) -> (door = closed))
+
+--negated
+--F((motion = moving) & (door = open))
+
+--elevator reaches a floor, its door opens
+--G((motion = stationary) -> (door = open))
+
+--negated
+--F((motion = stationary) & (door = closed))
+
+--call to a floor is made the elevator will eventually reach that floor
+--G((input = c1) -> F(floor = 1))
+
+--negated
+--F((input = c1) & (floor = 2))
+
+
+--G((input = c2) -> F(floor = 2))
+--G((input = c3) -> F(floor = 3))
+
+-- door remains open when the elevator is waiting on a floor
+--G((motion = stationary) -> (door = open))
+
+--negated
+--F((motion = stationary) & (door = closed))
+
+-- node coverage
+
+--G ! ( state = a )
+--G ! ( state = b )
+--G ! ( state = c )
+--G ! ( state = d )
+--G ! ( state = e )
+--G ! ( state = f )
+
+--G ! (door =open)
+--G ! (door =closed)
+
+--G ! (motion =stationary)
+--G ! (motion =moving)
+
+--G ! (floor =1)
+--G ! (floor =2)
+--G ! (floor =3)
+
+-- edge coverage
+
+--G(state= a & input = c1 -> X !(state=a))
+--G(state= a & input = c2 -> X !(state=b))
+--G(state= a & input = c3 -> X !(state=b))
+--G(state= b & input = c1 -> X !(state=a))
+--G(state= b & input = c2 -> X !(state=c))
+--G(state= b & input = c3 -> X !(state=c))
+--G(state= c & input = c1 -> X !(state=b))
+--G(state= c & input = c2 -> X !(state=d))
+--G(state= c & input = c3 -> X !(state=e))
+--G(state= d & input = c1 -> X !(state=c))
+--G(state= d & input = c2 -> X !(state=d))
+--G(state= d & input = c3 -> X !(state=c))
+--G(state= e & input = c1 -> X !(state=c))
+--G(state= e & input = c2 -> X !(state=c))
+--G(state= e & input = c3 -> X !(state=f))
+--G(state= f & input = c1 -> X !(state=e))
+--G(state= f & input = c2 -> X !(state=e))
+--G(state= f & input = c3 -> X !(state=f))
+
+
+--G((floor = 1 & motion = stationary )->X !(floor=1))
+--G((floor = 3 & motion = stationary )->X !(floor=3))
+--G((floor = 2 & motion = moving )->X !(floor=1))
+--G((door = open & motion = stationary )->X !(floor=1))
